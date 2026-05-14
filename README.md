@@ -108,14 +108,10 @@
             box-shadow: 0 0 20px rgba(0,180,220,0.2);
         }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
         .logo i {
             font-size: 2rem;
             color: #0ff;
+            margin-left: 0.5rem;
         }
 
         .nav-links {
@@ -133,66 +129,12 @@
             transition: 0.2s;
             letter-spacing: 0.5px;
             position: relative;
-            cursor: pointer;
         }
 
         .nav-links a:hover, .nav-links a.active {
             background: rgba(0, 255, 255, 0.2);
             text-shadow: 0 0 6px cyan;
             box-shadow: 0 0 10px rgba(0,255,255,0.4);
-        }
-
-        /* Auth buttons in top-left */
-        .auth-buttons {
-            display: flex;
-            gap: 0.8rem;
-            align-items: center;
-        }
-        .auth-icon-btn {
-            background: rgba(0, 255, 255, 0.15);
-            border: 1px solid rgba(0, 255, 255, 0.5);
-            border-radius: 40px;
-            padding: 0.4rem 1rem;
-            color: #0ff;
-            cursor: pointer;
-            transition: 0.2s;
-            font-size: 0.9rem;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .auth-icon-btn i {
-            font-size: 1rem;
-        }
-        .auth-icon-btn:hover {
-            background: rgba(0, 255, 255, 0.3);
-            box-shadow: 0 0 12px cyan;
-            transform: scale(1.02);
-        }
-        .user-info-header {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            background: rgba(0, 255, 255, 0.15);
-            border-radius: 40px;
-            padding: 0.3rem 1rem;
-        }
-        .user-info-header span {
-            font-size: 0.85rem;
-            color: #0ff;
-        }
-        .logout-icon {
-            background: none;
-            border: none;
-            color: #ff6680;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: 0.2s;
-        }
-        .logout-icon:hover {
-            transform: scale(1.1);
-            text-shadow: 0 0 8px #ff6680;
         }
 
         /* Page sections */
@@ -341,7 +283,7 @@
             box-shadow: 0 0 15px cyan;
         }
 
-        /* Form fields */
+        /* Form fields - oval transparent with gradient */
         .modern-input, .modern-textarea {
             width: 100%;
             padding: 0.9rem 1.5rem;
@@ -366,21 +308,6 @@
             background: rgba(30, 50, 85, 0.7);
             box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
             transform: scale(1.01);
-        }
-        .input-icon {
-            position: relative;
-            display: flex;
-            align-items: center;
-        }
-        .input-icon i {
-            position: absolute;
-            right: 18px;
-            color: #0ff;
-            font-size: 1.1rem;
-            opacity: 0.7;
-        }
-        .input-icon input {
-            padding-right: 45px;
         }
 
         /* footer socials */
@@ -437,7 +364,6 @@
             .container { padding: 1rem; }
             nav { flex-direction: column; gap: 1rem; }
             h2 { font-size: 1.6rem; }
-            .auth-buttons { margin-top: 0.5rem; }
         }
 
         .status-badge {
@@ -452,6 +378,7 @@
         .status-completed { background: #00cc88; color: #002b1a; }
         .status-cancelled { background: #aa2e4e; color: white; }
         
+        /* extra sections */
         .extra-sections {
             margin-top: 3rem;
             display: flex;
@@ -475,6 +402,7 @@
             font-size: 1rem;
         }
 
+        /* Developer section */
         .developers-section {
             display: flex;
             justify-content: center;
@@ -527,37 +455,12 @@
             color: #0ff;
         }
 
-        /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.95);
-            backdrop-filter: blur(12px);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-            animation: fadeIn 0.3s;
-        }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        .modal-content {
-            background: rgba(10, 20, 40, 0.98);
-            border-radius: 2rem;
-            padding: 2rem;
-            width: 90%;
-            max-width: 500px;
-            border: 1px solid #0ff;
-            box-shadow: 0 0 50px rgba(0,255,255,0.4);
-        }
+        /* Auth forms */
         .auth-tabs {
             display: flex;
             gap: 1rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             border-bottom: 1px solid rgba(0,255,255,0.3);
-            justify-content: center;
         }
         .auth-tab {
             background: transparent;
@@ -574,24 +477,21 @@
             color: #0ff;
             text-shadow: 0 0 5px cyan;
         }
-        .close-modal {
-            float: left;
-            font-size: 1.8rem;
-            cursor: pointer;
-            color: #0ff;
-            transition: 0.2s;
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(0,255,255,0.1);
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
         }
-        .close-modal:hover { transform: scale(1.2); }
     </style>
 </head>
 <body>
 <div class="stars" id="starsContainer"></div>
 <div class="container">
     <nav>
-        <div class="logo glow-text">
-            <i class="fas fa-car-crash"></i>
-            <span>الحقني</span>
-        </div>
+        <div class="logo glow-text"><i class="fas fa-car-crash"></i> الحقني</div>
         <div class="nav-links" id="navLinks">
             <a href="#" data-page="home" class="active">🏠 الرئيسية</a>
             <a href="#" data-page="services">🛠️ الخدمات</a>
@@ -601,15 +501,36 @@
             <a href="#" data-page="faq">❓ الأسئلة</a>
             <a href="#" data-page="contact">📞 تواصل</a>
         </div>
-        <!-- أيقونات تسجيل الدخول والحساب في أعلى اليسار (بجانب الشعار) -->
-        <div class="auth-buttons" id="authButtonsHeader">
-            <!-- سيتم ملؤها بواسطة JavaScript -->
-        </div>
     </nav>
 
-    <!-- باقي الصفحات كما هي -->
+    <!-- PAGE: HOME مع تسجيل الدخول وإنشاء حساب -->
     <div id="home" class="page active-page">
-        <h2 class="glow-text">⭐ مرحباً بك في الحقني</h2>
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+            <h2 class="glow-text">⭐ مرحباً بك في الحقني</h2>
+            <div id="authStatus"></div>
+        </div>
+        
+        <!-- نموذج تسجيل الدخول / إنشاء حساب -->
+        <div class="card" style="max-width: 500px; margin: 0 auto 2rem auto;">
+            <div class="auth-tabs">
+                <button class="auth-tab active" id="loginTabBtn">تسجيل الدخول</button>
+                <button class="auth-tab" id="signupTabBtn">إنشاء حساب جديد</button>
+            </div>
+            <div id="loginForm">
+                <input type="email" id="loginEmail" placeholder="البريد الإلكتروني" class="modern-input">
+                <input type="password" id="loginPassword" placeholder="كلمة المرور" class="modern-input">
+                <button id="loginBtn" class="btn" style="width:100%">دخول</button>
+            </div>
+            <div id="signupForm" style="display:none;">
+                <input type="text" id="signupFullName" placeholder="الاسم الكامل" class="modern-input">
+                <input type="email" id="signupEmail" placeholder="البريد الإلكتروني" class="modern-input">
+                <input type="tel" id="signupPhone" placeholder="رقم الهاتف" class="modern-input">
+                <input type="password" id="signupPassword" placeholder="كلمة المرور" class="modern-input">
+                <button id="signupBtn" class="btn" style="width:100%">إنشاء حساب</button>
+            </div>
+            <div id="authMessage" style="margin-top: 0.5rem; font-size: 0.8rem; text-align: center;"></div>
+        </div>
+        
         <p style="font-size:1.2rem; margin-top:1rem;">تطبيق المساعدة العاجلة للسيارات والشاحنات في الجزائر — 24 ساعة، سرعة فائقة، خدمات متكاملة.</p>
         <div class="services-grid" style="margin-top:2rem;">
             <div class="card"><i class="fas fa-wrench"></i><h3>ميكانيكي متنقل</h3><p>إصلاح عاجل في موقع العطل.</p></div>
@@ -620,171 +541,173 @@
         <div style="margin-top:2rem;text-align:center;">
             <button class="btn" id="quickRequestBtnHome">📱 اطلب المساعدة الآن</button>
         </div>
+
         <div class="extra-sections">
-            <div class="info-block"><h3><i class="fas fa-lightbulb"></i> فكرة الموقع ورؤيته</h3><p>“الحقني” هو منصة جزائرية ذكية تربط السائقين (شاحنات وسيارات) بأسرع مزودي خدمات الطوارئ على الطريق. فكرتنا تنبع من الحاجة الملحة إلى حل سريع ومنظم عند التعطل في المناطق النائية أو الطرق السريعة.</p></div>
-            <div class="info-block"><h3><i class="fas fa-mobile-alt"></i> شرح التطبيق</h3><p>تطبيق “الحقني” يعمل كمساعد افتراضي دائم: بمجرد فتح التطبيق، تستطيع اختيار الخدمة المناسبة. يتم تحديد موقعك الجغرافي بدقة، وإرسال طلبك إلى أقرب مزود خدمة.</p></div>
-            <div class="info-block"><h3><i class="fas fa-chart-line"></i> فوائد التطبيق</h3><div class="benefits-grid"><div class="benefit-card"><i class="fas fa-bolt"></i><p>سرعة الاستجابة - وصول المساعدة في أقل من 20 دقيقة</p></div><div class="benefit-card"><i class="fas fa-clock"></i><p>توفير الوقت والجهد</p></div><div class="benefit-card"><i class="fas fa-shield-alt"></i><p>خدمة 24 ساعة</p></div><div class="benefit-card"><i class="fas fa-map-marker-alt"></i><p>دقة تحديد الموقع</p></div></div></div>
-            <div class="info-block"><h3><i class="fas fa-exclamation-triangle"></i> المشكلات التي يعالجها التطبيق</h3><div class="solutions-grid" style="grid-template-columns: repeat(auto-fill, minmax(240px,1fr));"><div><i class="fas fa-car-side"></i> تعطل الشاحنات والسيارات</div><div><i class="fas fa-gas-pump"></i> نفاد الوقود</div><div><i class="fas fa-oil-can"></i> نقص الزيوت</div><div><i class="fas fa-tools"></i> أعطال ميكانيكية</div><div><i class="fas fa-truck"></i> الحاجة إلى سحب السيارة</div><div><i class="fas fa-map-marked-alt"></i> صعوبة إيجاد ورشة</div></div></div>
+            <div class="info-block">
+                <h3><i class="fas fa-lightbulb"></i> فكرة الموقع ورؤيته</h3>
+                <p>“الحقني” هو منصة جزائرية ذكية تربط السائقين (شاحنات وسيارات) بأسرع مزودي خدمات الطوارئ على الطريق. فكرتنا تنبع من الحاجة الملحة إلى حل سريع ومنظم عند التعطل في المناطق النائية أو الطرق السريعة.</p>
+            </div>
+            <div class="info-block">
+                <h3><i class="fas fa-mobile-alt"></i> شرح التطبيق</h3>
+                <p>تطبيق “الحقني” يعمل كمساعد افتراضي دائم: بمجرد فتح التطبيق، تستطيع اختيار الخدمة المناسبة. يتم تحديد موقعك الجغرافي بدقة، وإرسال طلبك إلى أقرب مزود خدمة. يمكنك متابعة حالة طلبك من لوحة “طلباتي”.</p>
+            </div>
+            <div class="info-block">
+                <h3><i class="fas fa-chart-line"></i> فوائد التطبيق</h3>
+                <div class="benefits-grid">
+                    <div class="benefit-card"><i class="fas fa-bolt"></i><p>سرعة الاستجابة - وصول المساعدة في أقل من 20 دقيقة</p></div>
+                    <div class="benefit-card"><i class="fas fa-clock"></i><p>توفير الوقت والجهد - لا حاجة للبحث عن أرقام الورش</p></div>
+                    <div class="benefit-card"><i class="fas fa-shield-alt"></i><p>الراحة والأمان - خدمة 24 ساعة</p></div>
+                    <div class="benefit-card"><i class="fas fa-map-marker-alt"></i><p>دقة تحديد الموقع عبر GPS</p></div>
+                    <div class="benefit-card"><i class="fas fa-concierge-bell"></i><p>تنوع الخدمات</p></div>
+                    <div class="benefit-card"><i class="fas fa-gem"></i><p>مجاني بالكامل</p></div>
+                </div>
+            </div>
+            <div class="info-block">
+                <h3><i class="fas fa-exclamation-triangle"></i> المشكلات التي يعالجها التطبيق</h3>
+                <div class="solutions-grid" style="grid-template-columns: repeat(auto-fill, minmax(240px,1fr)); margin-top:1rem;">
+                    <div><i class="fas fa-car-side"></i> تعطل الشاحنات والسيارات</div>
+                    <div><i class="fas fa-gas-pump"></i> نفاد الوقود</div>
+                    <div><i class="fas fa-oil-can"></i> نقص الزيوت</div>
+                    <div><i class="fas fa-tools"></i> أعطال ميكانيكية</div>
+                    <div><i class="fas fa-truck"></i> الحاجة إلى سحب السيارة</div>
+                    <div><i class="fas fa-map-marked-alt"></i> صعوبة إيجاد ورشة</div>
+                    <div><i class="fas fa-location-dot"></i> صعوبة تحديد الموقع</div>
+                    <div><i class="fas fa-clock"></i> بطء طلب المساعدة</div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div id="services" class="page"><h2 class="glow-text">🚛 جميع الخدمات</h2><div class="services-grid"><div class="card"><i class="fas fa-tools"></i><h3>إصلاح ميكانيكي</h3></div><div class="card"><i class="fas fa-tint"></i><h3>توصيل الزيوت</h3></div><div class="card"><i class="fas fa-gas-pump"></i><h3>توصيل الوقود</h3></div><div class="card"><i class="fas fa-car-battery"></i><h3>قطع غيار</h3></div><div class="card"><i class="fas fa-map-marked-alt"></i><h3>توجيه إلى ورشات</h3></div><div class="card"><i class="fas fa-truck-moving"></i><h3>خدمة السحب</h3></div></div></div>
-    <div id="request" class="page"><h2 class="glow-text">📢 طلب مساعدة فورية</h2><div class="card"><form id="helpRequestForm"><select id="serviceType" class="modern-input"><option>ميكانيكي متنقل</option><option>توصيل وقود</option><option>توصيل زيوت</option><option>ديبناج (سحب)</option></select><textarea id="problemDesc" class="modern-textarea" placeholder="وصف المشكلة"></textarea><input type="tel" id="phoneReq" placeholder="رقم هاتفك" class="modern-input" required><button type="button" id="getLocationBtn" class="btn btn-outline">📍 تحديد موقعي</button><input type="text" id="locationLink" placeholder="رابط الموقع" class="modern-input"><button type="submit" class="btn">إرسال الطلب</button></form></div></div>
-    <div id="myorders" class="page"><h2 class="glow-text">📋 طلباتي</h2><div id="ordersContainer" class="order-list"></div><button id="refreshOrdersBtn" class="btn btn-outline">تحديث الطلبات</button></div>
-    <div id="features" class="page"><h2 class="glow-text">💎 مميزات التطبيق</h2><div class="features-grid"><div class="card"><i class="fas fa-bolt"></i><h3>هز الهاتف للتبليغ</h3></div><div class="card"><i class="fas fa-moon"></i><h3>وضع ليلي</h3></div><div class="card"><i class="fas fa-chart-line"></i><h3>متابعة الطلبات</h3></div></div></div>
-    <div id="faq" class="page"><h2 class="glow-text">❓ الأسئلة الشائعة</h2><div class="faq-grid"><div class="card"><h3>كيف أطلب المساعدة؟</h3><p>اختر الخدمة من صفحة الطلب</p></div><div class="card"><h3>هل التطبيق مجاني؟</h3><p>نعم بالكامل</p></div></div></div>
-    <div id="contact" class="page"><h2 class="glow-text">📞 تواصل مع فريق الحقني</h2><div class="card"><p><i class="fas fa-envelope"></i> support@alhaqni.com</p><p><i class="fas fa-phone-alt"></i> 1555</p><p><i class="fab fa-whatsapp"></i> +213 789 456</p><div class="developers-section"><div class="dev-card"><span class="fading-star">⭐</span><span class="dev-name">دماني نعيمة</span></div><div class="dev-card"><span class="fading-star">⭐</span><span class="dev-name">بلعدل فاطيمة</span></div></div><hr><h3>الإبلاغ عن مشكلة</h3><form id="reportIssue"><textarea id="reportMsg" class="modern-textarea" placeholder="تفاصيل المشكلة"></textarea><button type="submit" class="btn">إرسال التبليغ</button></form></div></div>
+    <!-- باقي الصفحات مختصرة (SERVICES, REQUEST, MYORDERS, FEATURES, FAQ, CONTACT) -->
+    <div id="services" class="page"><h2 class="glow-text">🚛 الخدمات</h2><div class="services-grid"><div class="card"><i class="fas fa-tools"></i><h3>إصلاح ميكانيكي</h3><p>ميكانيكي محترف يصل إلى موقعك</p></div><div class="card"><i class="fas fa-tint"></i><h3>توصيل الزيوت</h3><p>زيت محرك حسب الطلب</p></div><div class="card"><i class="fas fa-charging-station"></i><h3>توصيل الوقود</h3><p>بنزين، ديزل</p></div><div class="card"><i class="fas fa-car-battery"></i><h3>قطع غيار</h3><p>بطاريات وإطارات</p></div><div class="card"><i class="fas fa-map-marked-alt"></i><h3>توجيه إلى ورشات</h3><p>أقرب ورشة</p></div><div class="card"><i class="fas fa-truck-moving"></i><h3>خدمة السحب</h3><p>ديبناج مجهز</p></div></div></div>
+    <div id="request" class="page"><h2 class="glow-text">📢 طلب مساعدة</h2><div class="card"><form id="helpRequestForm"><select id="serviceType" class="modern-input"><option>ميكانيكي متنقل</option><option>توصيل وقود</option><option>توصيل زيوت</option><option>ديبناج (سحب)</option></select><textarea id="problemDesc" class="modern-textarea" placeholder="وصف المشكلة"></textarea><input type="tel" id="phoneReq" placeholder="رقم هاتفك" class="modern-input" required><button type="button" id="getLocationBtn" class="btn-outline btn">تحديد موقعي</button><input type="text" id="locationLink" placeholder="رابط الموقع" class="modern-input"><button type="submit" class="btn">إرسال الطلب</button></form></div></div>
+    <div id="myorders" class="page"><h2 class="glow-text">📋 طلباتي</h2><div id="ordersContainer" class="order-list"></div><button id="refreshOrdersBtn" class="btn-outline btn">تحديث</button></div>
+    <div id="features" class="page"><h2 class="glow-text">💎 الميزات</h2><div class="features-grid"><div class="card"><i class="fas fa-bolt"></i><h3>هز الهاتف</h3><p>تبليغ سريع</p></div><div class="card"><i class="fas fa-moon"></i><h3>وضع ليلي</h3><p>نجوم متحركة</p></div><div class="card"><i class="fas fa-chart-line"></i><h3>متابعة الطلبات</h3><p>حالة فورية</p></div></div></div>
+    <div id="faq" class="page"><h2 class="glow-text">❓ الأسئلة</h2><div class="faq-grid"><div class="card"><h3>كيف أطلب المساعدة؟</h3><p>اختر الخدمة وأرسل موقعك</p></div><div class="card"><h3>هل التطبيق مجاني؟</h3><p>نعم بالكامل</p></div></div></div>
+    <div id="contact" class="page"><h2 class="glow-text">📞 تواصل</h2><div class="card"><p><i class="fas fa-envelope"></i> support@alhaqni.com</p><p><i class="fas fa-phone-alt"></i> 1555</p><div class="developers-section"><div class="dev-card"><span class="fading-star">⭐</span><span class="dev-name">دماني نعيمة</span></div><div class="dev-card"><span class="fading-star">⭐</span><span class="dev-name">بلعدل فاطيمة</span></div></div><hr><h3>الإبلاغ عن مشكلة</h3><form id="reportIssue"><textarea id="reportMsg" class="modern-textarea" placeholder="تفاصيل المشكلة"></textarea><button type="submit" class="btn">إرسال</button></form></div></div>
 
-    <div class="footer-social"><div class="social-icons"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-twitter"></i></a></div><p>© 2025 الحقني</p></div>
-</div>
-
-<!-- Modal تسجيل الدخول / إنشاء حساب -->
-<div id="authModal" class="modal">
-    <div class="modal-content">
-        <span class="close-modal" id="closeModalBtn">&times;</span>
-        <div class="auth-tabs">
-            <button class="auth-tab active" id="modalLoginTab">تسجيل الدخول</button>
-            <button class="auth-tab" id="modalSignupTab">إنشاء حساب جديد</button>
+    <div class="footer-social">
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a>
         </div>
-        <div id="modalLoginForm">
-            <div class="input-icon"><i class="fas fa-envelope"></i><input type="email" id="modalLoginEmail" placeholder="البريد الإلكتروني" class="modern-input"></div>
-            <div class="input-icon"><i class="fas fa-lock"></i><input type="password" id="modalLoginPassword" placeholder="كلمة المرور" class="modern-input"></div>
-            <button id="modalLoginBtn" class="btn">دخول</button>
-        </div>
-        <div id="modalSignupForm" style="display:none;">
-            <div class="input-icon"><i class="fas fa-user"></i><input type="text" id="modalSignupName" placeholder="الاسم الكامل" class="modern-input"></div>
-            <div class="input-icon"><i class="fas fa-envelope"></i><input type="email" id="modalSignupEmail" placeholder="البريد الإلكتروني" class="modern-input"></div>
-            <div class="input-icon"><i class="fas fa-phone"></i><input type="tel" id="modalSignupPhone" placeholder="رقم الهاتف" class="modern-input"></div>
-            <div class="input-icon"><i class="fas fa-lock"></i><input type="password" id="modalSignupPassword" placeholder="كلمة المرور" class="modern-input"></div>
-            <div class="input-icon"><i class="fas fa-check-circle"></i><input type="password" id="modalSignupConfirmPassword" placeholder="تأكيد كلمة المرور" class="modern-input"></div>
-            <button id="modalSignupBtn" class="btn">إنشاء حساب</button>
-        </div>
-        <div id="modalAuthMsg" style="margin-top:1rem;text-align:center;font-size:0.8rem;color:#ffaa66;"></div>
+        <p>© 2025 الحقني</p>
     </div>
 </div>
 
 <script>
-    // Supabase
+    // Supabase initialization
     const SUPABASE_URL = 'https://mpbnwlzlxnqkhugdxmtb.supabase.co';
     const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1wYm53bHpseG5xa2h1Z2R4bXRiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc1NTE4MjEsImV4cCI6MjA5MzEyNzgyMX0.l5GJ4Wiol38evG7GSX8GzENwyC_tKWd0-P4Y1gZ9kyI';
     const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
     let currentUser = null;
 
-    const authModal = document.getElementById('authModal');
-    const modalLoginForm = document.getElementById('modalLoginForm');
-    const modalSignupForm = document.getElementById('modalSignupForm');
-    const modalLoginTab = document.getElementById('modalLoginTab');
-    const modalSignupTab = document.getElementById('modalSignupTab');
-    const modalAuthMsg = document.getElementById('modalAuthMsg');
+    // UI Elements
+    const loginFormDiv = document.getElementById('loginForm');
+    const signupFormDiv = document.getElementById('signupForm');
+    const loginTab = document.getElementById('loginTabBtn');
+    const signupTab = document.getElementById('signupTabBtn');
+    const authStatus = document.getElementById('authStatus');
+    const authMessage = document.getElementById('authMessage');
 
-    function showModal() { authModal.style.display = 'flex'; }
-    function closeModal() { authModal.style.display = 'none'; }
-    document.getElementById('closeModalBtn').addEventListener('click', closeModal);
-
-    modalLoginTab.addEventListener('click', () => {
-        modalLoginTab.classList.add('active');
-        modalSignupTab.classList.remove('active');
-        modalLoginForm.style.display = 'block';
-        modalSignupForm.style.display = 'none';
-        modalAuthMsg.innerHTML = '';
+    loginTab.addEventListener('click', () => {
+        loginTab.classList.add('active');
+        signupTab.classList.remove('active');
+        loginFormDiv.style.display = 'block';
+        signupFormDiv.style.display = 'none';
+        authMessage.innerHTML = '';
     });
-    modalSignupTab.addEventListener('click', () => {
-        modalSignupTab.classList.add('active');
-        modalLoginTab.classList.remove('active');
-        modalLoginForm.style.display = 'none';
-        modalSignupForm.style.display = 'block';
-        modalAuthMsg.innerHTML = '';
+    signupTab.addEventListener('click', () => {
+        signupTab.classList.add('active');
+        loginTab.classList.remove('active');
+        loginFormDiv.style.display = 'none';
+        signupFormDiv.style.display = 'block';
+        authMessage.innerHTML = '';
     });
 
     // تسجيل الدخول
-    document.getElementById('modalLoginBtn').addEventListener('click', async () => {
-        const email = document.getElementById('modalLoginEmail').value;
-        const password = document.getElementById('modalLoginPassword').value;
-        if (!email || !password) { modalAuthMsg.innerHTML = '⚠️ الرجاء ملء البريد وكلمة المرور'; return; }
-        modalAuthMsg.innerHTML = '⏳ جاري تسجيل الدخول...';
+    document.getElementById('loginBtn').addEventListener('click', async () => {
+        const email = document.getElementById('loginEmail').value;
+        const password = document.getElementById('loginPassword').value;
+        if (!email || !password) { authMessage.innerHTML = '⚠️ الرجاء ملء جميع الحقول'; return; }
         const { data, error } = await supabase.auth.signInWithPassword({ email, password });
-        if (error) { modalAuthMsg.innerHTML = '❌ ' + error.message; return; }
-        modalAuthMsg.innerHTML = '✅ تم تسجيل الدخول بنجاح!';
+        if (error) { authMessage.innerHTML = '❌ ' + error.message; return; }
+        authMessage.innerHTML = '✅ تم تسجيل الدخول بنجاح!';
         currentUser = data.user;
         updateAuthUI();
-        closeModal();
-        document.getElementById('modalLoginEmail').value = '';
-        document.getElementById('modalLoginPassword').value = '';
     });
 
     // إنشاء حساب
-    document.getElementById('modalSignupBtn').addEventListener('click', async () => {
-        const fullName = document.getElementById('modalSignupName').value.trim();
-        const email = document.getElementById('modalSignupEmail').value.trim();
-        const phone = document.getElementById('modalSignupPhone').value.trim();
-        const password = document.getElementById('modalSignupPassword').value;
-        const confirmPassword = document.getElementById('modalSignupConfirmPassword').value;
-        if (!fullName || !email || !phone || !password || !confirmPassword) {
-            modalAuthMsg.innerHTML = '⚠️ الرجاء ملء جميع الحقول';
-            return;
-        }
-        if (password !== confirmPassword) { modalAuthMsg.innerHTML = '⚠️ كلمة المرور غير متطابقة'; return; }
-        if (password.length < 6) { modalAuthMsg.innerHTML = '⚠️ كلمة المرور 6 أحرف على الأقل'; return; }
-        modalAuthMsg.innerHTML = '⏳ جاري إنشاء الحساب...';
-        const { data, error } = await supabase.auth.signUp({ email, password, options: { data: { full_name: fullName, phone: phone } } });
-        if (error) { modalAuthMsg.innerHTML = '❌ ' + error.message; return; }
+    document.getElementById('signupBtn').addEventListener('click', async () => {
+        const fullName = document.getElementById('signupFullName').value;
+        const email = document.getElementById('signupEmail').value;
+        const phone = document.getElementById('signupPhone').value;
+        const password = document.getElementById('signupPassword').value;
+        if (!fullName || !email || !phone || !password) { authMessage.innerHTML = '⚠️ الرجاء ملء جميع الحقول'; return; }
+        const { data, error } = await supabase.auth.signUp({ email, password });
+        if (error) { authMessage.innerHTML = '❌ ' + error.message; return; }
+        // إضافة بيانات المستخدم إلى جدول users (id, email, full_name, phone)
         if (data.user) {
-            await supabase.from('users').insert([{ id: data.user.id, email, full_name: fullName, phone }]);
-            modalAuthMsg.innerHTML = '✅ تم إنشاء الحساب! يمكنك تسجيل الدخول الآن.';
-        } else { modalAuthMsg.innerHTML = '✅ تم إنشاء الحساب! يرجى التحقق من بريدك.'; }
-        document.getElementById('modalSignupName').value = '';
-        document.getElementById('modalSignupEmail').value = '';
-        document.getElementById('modalSignupPhone').value = '';
-        document.getElementById('modalSignupPassword').value = '';
-        document.getElementById('modalSignupConfirmPassword').value = '';
-        setTimeout(() => { modalLoginTab.click(); modalAuthMsg.innerHTML = '✨ قم بتسجيل الدخول ✨'; }, 1500);
+            const { error: insertError } = await supabase
+                .from('users')
+                .insert([{ id: data.user.id, email: email, full_name: fullName, phone: phone }]);
+            if (insertError) console.error('Insert error:', insertError);
+        }
+        authMessage.innerHTML = '✅ تم إنشاء الحساب! يمكنك تسجيل الدخول الآن.';
+        loginTab.click();
+        document.getElementById('signupFullName').value = '';
+        document.getElementById('signupEmail').value = '';
+        document.getElementById('signupPhone').value = '';
+        document.getElementById('signupPassword').value = '';
     });
 
-    async function logout() {
+    // تسجيل الخروج
+    window.logout = async () => {
         await supabase.auth.signOut();
         currentUser = null;
         updateAuthUI();
-        showModal();
-        renderOrders();
-    }
+        authMessage.innerHTML = 'تم تسجيل الخروج';
+    };
 
     function updateAuthUI() {
-        const authContainer = document.getElementById('authButtonsHeader');
         if (currentUser) {
-            authContainer.innerHTML = `<div class="user-info-header"><span>👤 ${currentUser.email.substring(0, 15)}</span><button class="logout-icon" onclick="logout()" title="تسجيل خروج"><i class="fas fa-sign-out-alt"></i></button></div>`;
+            authStatus.innerHTML = `<div class="user-info"><span>👤 ${currentUser.email}</span><button class="btn-outline" onclick="logout()" style="padding:0.3rem 0.8rem;">تسجيل خروج</button></div>`;
+            // إظهار العناصر الخاصة بالمستخدم
         } else {
-            authContainer.innerHTML = `<button class="auth-icon-btn" id="showLoginBtn"><i class="fas fa-sign-in-alt"></i> دخول</button><button class="auth-icon-btn" id="showSignupBtn"><i class="fas fa-user-plus"></i> تسجيل</button>`;
-            document.getElementById('showLoginBtn')?.addEventListener('click', () => { modalLoginTab.click(); showModal(); });
-            document.getElementById('showSignupBtn')?.addEventListener('click', () => { modalSignupTab.click(); showModal(); });
+            authStatus.innerHTML = '<span style="opacity:0.7;">⚠️ غير مسجل الدخول</span>';
         }
     }
 
+    // التحقق من الجلسة الحالية
     async function checkSession() {
         const { data: { session } } = await supabase.auth.getSession();
-        if (session) { currentUser = session.user; updateAuthUI(); if (authModal.style.display === 'flex') closeModal(); }
-        else { updateAuthUI(); }
-        renderOrders();
+        if (session) {
+            currentUser = session.user;
+            updateAuthUI();
+        }
     }
     checkSession();
 
-    // Stars
+    // Stars generation
     function generateMovingStars() {
         const starsDiv = document.getElementById('starsContainer');
         starsDiv.innerHTML = '';
-        for(let i=0;i<250;i++) {
+        for(let i = 0; i < 200; i++) {
             let star = document.createElement('div');
             star.classList.add('star');
-            star.style.width = (Math.random()*3+1)+'px';
+            star.style.width = (Math.random() * 3 + 1) + 'px';
             star.style.height = star.style.width;
-            star.style.left = Math.random()*100+'%';
-            star.style.top = Math.random()*100+'%';
-            star.style.animation = `floatStar ${8+Math.random()*15}s linear infinite`;
-            star.style.animationDelay = Math.random()*10+'s';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animation = `floatStar ${8 + Math.random() * 15}s linear infinite`;
+            star.style.animationDelay = Math.random() * 10 + 's';
             starsDiv.appendChild(star);
         }
     }
     generateMovingStars();
 
+    // Page navigation
     const pages = ['home','services','request','myorders','features','faq','contact'];
     function showPage(pageId) {
         pages.forEach(p => document.getElementById(p).classList.remove('active-page'));
@@ -800,13 +723,14 @@
     });
     document.getElementById('quickRequestBtnHome')?.addEventListener('click', () => showPage('request'));
 
+    // Orders (local storage for demo, linked to user)
     let orders = JSON.parse(localStorage.getItem('haqni_orders')) || [];
     function saveOrders() { localStorage.setItem('haqni_orders', JSON.stringify(orders)); }
     function renderOrders() {
         const container = document.getElementById('ordersContainer');
         if(!container) return;
         const userOrders = orders.filter(o => o.userId === currentUser?.id);
-        if(userOrders.length === 0) { container.innerHTML = '<p style="text-align:center;">✨ لا توجد طلبات بعد ✨</p>'; return; }
+        if(userOrders.length === 0) { container.innerHTML = '<p>لا توجد طلبات</p>'; return; }
         container.innerHTML = '';
         userOrders.slice().reverse().forEach(order => {
             const div = document.createElement('div'); div.className = 'order-item';
@@ -814,21 +738,20 @@
             container.appendChild(div);
         });
     }
-    function addOrder(service, phone, location, desc) {
-        if(!currentUser) { alert('الرجاء تسجيل الدخول أولاً'); showModal(); return false; }
-        orders.push({ id: Date.now(), userId: currentUser.id, service, phone, location, description: desc, status: 'قيد الانتظار', timestamp: new Date().toISOString() });
+    window.addOrderLocal = function(service, phone, location, desc) {
+        if(!currentUser) { alert('الرجاء تسجيل الدخول أولاً'); return false; }
+        orders.push({ id: Date.now(), userId: currentUser.id, service, phone, location, description: desc, status: 'pending', timestamp: new Date().toISOString() });
         saveOrders(); renderOrders(); return true;
-    }
+    };
     document.getElementById('helpRequestForm')?.addEventListener('submit', (e) => {
         e.preventDefault();
-        if(!currentUser) { alert('يرجى تسجيل الدخول'); showModal(); return; }
+        if(!currentUser) { alert('يرجى تسجيل الدخول لتقديم طلب'); return; }
         const service = document.getElementById('serviceType').value;
         const phone = document.getElementById('phoneReq').value;
-        if(!phone) { alert('الرجاء إدخال رقم الهاتف'); return; }
         const location = document.getElementById('locationLink').value || 'موقع غير محدد';
         const desc = document.getElementById('problemDesc').value;
-        if(addOrder(service, phone, location, desc)) {
-            alert('✅ تم إرسال الطلب بنجاح!');
+        if(addOrderLocal(service, phone, location, desc)) {
+            alert('تم إرسال الطلب بنجاح');
             e.target.reset();
             showPage('myorders');
         }
@@ -836,18 +759,14 @@
     document.getElementById('getLocationBtn')?.addEventListener('click', () => {
         if(navigator.geolocation) navigator.geolocation.getCurrentPosition(pos => {
             document.getElementById('locationLink').value = `https://maps.google.com/?q=${pos.coords.latitude},${pos.coords.longitude}`;
-            alert('تم تحديد موقعك');
-        }, () => alert('تعذر تحديد الموقع'));
+        });
     });
     document.getElementById('refreshOrdersBtn')?.addEventListener('click', () => renderOrders());
     document.getElementById('reportIssue')?.addEventListener('submit', (e) => {
         e.preventDefault();
-        const msg = document.getElementById('reportMsg').value;
-        if(msg.trim()) alert('شكراً لك، تم استلام بلاغك');
-        else alert('الرجاء كتابة تفاصيل المشكلة');
+        alert('تم استلام بلاغك، شكراً لك');
         e.target.reset();
     });
-    window.logout = logout;
     renderOrders();
 </script>
 </body>
